@@ -59,7 +59,7 @@ export default function Navigation() {
         color="blue-gray"
         className="p-1 font-normal  hover:underline underline-offset-1 "
       >
-        <NavLink to="about" className="flex items-center">
+        <NavLink to="cart" className="flex items-center">
           Shoping Cart
         </NavLink>
       </Typography>
@@ -90,20 +90,24 @@ export default function Navigation() {
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
               <div className="flex items-center gap-x-1">
-                <Button
-                  variant="text"
-                  size="sm"
-                  className="hidden lg:inline-block"
-                >
-                  <NavLink to="/login">Log In</NavLink>
-                </Button>
-                <Button
-                  variant="gradient"
-                  size="sm"
-                  className="hidden lg:inline-block"
-                >
-                  <NavLink to="/register">Sign in</NavLink>
-                </Button>
+                <NavLink to="/login">
+                  <Button
+                    variant="text"
+                    size="sm"
+                    className="hidden lg:inline-block"
+                  >
+                    Log In
+                  </Button>
+                </NavLink>
+                <NavLink to="/register">
+                  <Button
+                    variant="gradient"
+                    size="sm"
+                    className="hidden lg:inline-block"
+                  >
+                    Sign In
+                  </Button>
+                </NavLink>
               </div>
               <IconButton
                 variant="text"
@@ -147,12 +151,16 @@ export default function Navigation() {
           <Collapse open={openNav}>
             {navList}
             <div className="flex items-center gap-x-1">
-              <Button fullWidth variant="text" size="sm" className="">
-                <span>Log In</span>
-              </Button>
-              <Button fullWidth variant="gradient" size="sm" className="">
-                <span>Sign in</span>
-              </Button>
+              <NavLink to="/login">
+                <Button fullWidth variant="text" size="sm" className="">
+                  <span>Log In</span>
+                </Button>
+              </NavLink>
+              <NavLink to="/register">
+                <Button fullWidth variant="gradient" size="sm" className="">
+                  <span>Sign in</span>
+                </Button>
+              </NavLink>
             </div>
           </Collapse>
         </Navbar>

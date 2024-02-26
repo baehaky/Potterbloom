@@ -11,6 +11,7 @@ import ContactUsPage from "./view/ContactUsPage.jsx";
 import LoginPage from "./layout/LoginPage.jsx";
 import AuhtPage from "./hooks/AuthPage.jsx";
 import RegisterPage from "./layout/RegisterPage.jsx";
+import CartPage from "./layout/CartPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,12 +21,12 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <App /> },
       { path: "contact", element: <ContactUsPage /> },
+      { path: "cart", element: <CartPage /> },
     ],
   },
-  { path: "/register", element: <RegisterPage /> , errorElement: <ErrorPage />},
-  {path: "/login", element: <LoginPage />, errorElement: <ErrorPage />},
+  { path: "/register", element: <RegisterPage />, errorElement: <ErrorPage /> },
+  { path: "/login", element: <LoginPage />, errorElement: <ErrorPage /> },
 ]);
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
