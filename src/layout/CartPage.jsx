@@ -1,12 +1,25 @@
-import { Button } from "@material-tailwind/react";
-
+import { Button, Spinner } from "@material-tailwind/react";
+import React, { useState } from "react";
 export default function CartPage() {
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <h1 className="text-2xl font-bold my-4">Shopping Cart</h1>
-        <Button size="sm" className="font-bold py-2 px-8">
-          Checkout
+        <Button
+          size="sm"
+          onClick={handleClick}
+          disabled={loading}
+          className="font-bold py-2 px-8"
+        >
+          {loading ? <Spinner className="h-4 w-16" /> : "Checkout"}
         </Button>
       </div>
       <div className="mt-8">
